@@ -1,0 +1,37 @@
+body{
+	background-image: url("gambar.png");
+}
+
+h1{
+	background:red;
+	text-align:center;
+	border:2px solid blue;
+	padding: 20px;
+	border-radius:20px;
+}
+
+#kotak{
+	width:1220px;
+	height:1700px;
+	background:pink;
+	padding:20px;
+	opacity: 0.9;
+}
+
+.pertanyaan{
+	font:bold 20px tahoma;
+	color: blue;
+}
+
+.jawaban{
+font:normal 20px tahoma;
+color: red;
+}
+
+.tb{
+width:500px;
+height:48px;
+font:bold 20px tahoma;
+background:yellow;
+margin-left:px;
+}

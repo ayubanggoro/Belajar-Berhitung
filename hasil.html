@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<head>
+<title>KUIS BERHITUNG</title>
+</head>
+<link rel="stylesheet" type="text/css" href="hitung.css">
+
+<body>
+
+<script src="config.js">
+</script>
+
+<div id="kotak">
+<h1>BERAPA NILAIMU? </h1></p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><form method="POST" name="result"><table border="0" width="100%" cellpadding="0" height="10">
+        <tr>
+          <td height="5" bgcolor="#D3FFA8"><strong><font face="Arial"> Jumlah jawabanmu yang benar:</font></strong></td>
+          <td height="5"><p><input type="text" name="p" size="35"></td>
+        </tr>
+        <tr>
+          <td height="5" bgcolor="#D3FFA8"><strong><font face="Arial">Jawabanmu yang salah:</font></strong></td>
+          <td height="10"><p><textarea name="T2" rows="3" cols="32" wrap="virtual"></textarea></td>
+        </tr>
+        <tr>
+          <td height="5" bgcolor="#D3FFA8"><strong><font face="Arial">Nilaimu dalam persen:</font></strong></td>
+          <td height="5"><input type="text" name="q" size="35"></td>
+        </tr>
+      </table>
+    </form>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<form method="POST"><div
+  align="center"><center><p>
+
+<script>
+var wrong=0
+for (e=0;e<=2;e++)
+document.result[e].value=""
+
+var results=document.cookie.split(";")
+for (n=0;n<=results.length-1;n++){
+if (results[n].charAt(1)=='q')
+parse=n
+
+}
+
+var incorrect=results[parse].split("=")
+incorrect=incorrect[1].split("/")
+if (incorrect[incorrect.length-1]=='b')
+incorrect=""
+document.result[0].value=totalquestions-incorrect.length+" out of "+totalquestions
+document.result[2].value=(totalquestions-incorrect.length)/totalquestions*100+"%"
+for (temp=0;temp<incorrect.length;temp++)
+document.result[1].value+=incorrect[temp]+", "
+
+
+</script>
+
+<input type="button" class="tb" value="ULANGI MAIN KUIS LAGI" name="B1"
+  onClick="history.go(-1)"></p>
+  </center></div>
+</form>
+
+<p id="footnote" align="center"><font face="arial" size="-1">Powered by<br>
+<a href="http://solo-educare.esy.es">SoloEducare</a></font></p>
+</body>
+</html>
